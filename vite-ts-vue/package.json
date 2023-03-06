@@ -1,7 +1,7 @@
 {
   "name": "vite-ts-vue",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "dev": "vite --host --mode test",
     "dev:prod": "vite --host --mode prod",
