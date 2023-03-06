@@ -22,7 +22,10 @@ export default defineConfig((configEnv) => {
     },
     resolve: {
       alias: {
-        '@': resolve('src'),
+        '@': resolve('./src'),
+        '@comps': resolve('./src/components'),
+        '@image': resolve('./src/assets/image'),
+        '@style': resolve('./src/assets/style'),
       },
     },
     optimizeDeps: {},
