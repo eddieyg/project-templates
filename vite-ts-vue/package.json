@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "tsc": "vue-tsc --noEmit --skipLibCheck",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.2.45"
@@ -23,6 +24,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.35.0",
+    "husky": "^8.0.3",
     "proxy-agent": "^5.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
