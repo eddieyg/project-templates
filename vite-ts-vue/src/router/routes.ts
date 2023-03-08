@@ -9,16 +9,16 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/',
-        component: () => import('@/pages/Main/_Index.vue'),
-        name: 'Main',
+        component: () => import('@/pages/main/Index.vue'),
+        name: 'main',
         meta: {
           title: 'main page title',
         },
       },
       {
         path: '/example',
-        name: 'Example',
-        component: () => import('@/pages/Example/_Index.vue'),
+        name: 'example',
+        component: () => import('@/pages/example/Index.vue'),
         meta: {
           title: 'example page title',
         },
