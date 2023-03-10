@@ -26,6 +26,7 @@ export default defineConfig((configEnv) => {
         '@comps': resolve('./src/components'),
         '@image': resolve('./src/assets/image'),
         '@style': resolve('./src/assets/style'),
+        '@util': resolve('./src/util'),
       },
     },
     optimizeDeps: {},
