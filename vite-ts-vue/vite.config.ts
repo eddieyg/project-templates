@@ -18,7 +18,7 @@ export default defineConfig((configEnv) => {
   return {
     base: '/',
     define: {
-      VITE_D_buildTime: +new Date(),
+      VG_BUILD_TIME: +new Date(),
     },
     resolve: {
       alias: {

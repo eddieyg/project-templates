@@ -11,8 +11,9 @@ interface ImportMetaEnv {
    * .env.*
    */
   readonly VITE_APP_TITLE: string
-  /**
-   * vite.config define
-   */
-  readonly VITE_D_buildTime: number
 }
+
+/**
+ * vite.config define
+ */
+declare const VG_BUILD_TIME: number
