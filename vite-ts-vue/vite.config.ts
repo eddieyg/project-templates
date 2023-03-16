@@ -4,7 +4,7 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import removeConsole from 'vite-plugin-remove-console'
-// import mkcert from 'vite-plugin-mkcert'
+import mkcert from 'vite-plugin-mkcert'
 import eslint from 'vite-plugin-eslint'
 import autoprefixer from 'autoprefixer'
 import ProxyAgent from 'proxy-agent'
@@ -14,6 +14,12 @@ export default defineConfig((configEnv) => {
   const { mode, command } = configEnv
   const env = loadEnv(mode, process.cwd())
   const isProd = command === 'build'
+
+  const mkcertOptions: any = {}
+  if (env.VITE_MKCERT_PATH)
+    mkcertOptions.mkcertPath = env.VITE_MKCERT_PATH
+  else
+    mkcertOptions.source = 'coding'
 
   return {
     base: '/',
@@ -32,6 +38,8 @@ export default defineConfig((configEnv) => {
     optimizeDeps: {},
     plugins: [
       vue(),
+      mkcert(mkcertOptions),
+      eslint({ emitWarning: false }),
       createHtmlPlugin({
         minify: true,
         entry: '/src/main.ts',
@@ -43,8 +51,6 @@ export default defineConfig((configEnv) => {
         },
       }),
       removeConsole(),
-      // mkcert({ source: 'coding' }),
-      eslint(),
     ],
     css: {
       postcss: {
@@ -57,7 +63,6 @@ export default defineConfig((configEnv) => {
       },
     },
     server: {
-      // https: true,
       port: 9999,
       proxy: {
         '^/eddapi/.*': {
