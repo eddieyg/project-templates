@@ -18,8 +18,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@comps/*": ["./src/components/*"],
-      "@image/*": ["./src/assets/image/*"],
-      "@style/*": ["./src/assets/style/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@style/*": ["./src/style/*"],
       "@util/*": ["./src/util/*"],
     },
   },

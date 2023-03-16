@@ -31,8 +31,8 @@ export default defineConfig((configEnv) => {
       alias: {
         '@': resolve('./src'),
         '@comps': resolve('./src/components'),
-        '@image': resolve('./src/assets/image'),
-        '@style': resolve('./src/assets/style'),
+        '@assets': resolve('./src/assets'),
+        '@style': resolve('./src/style'),
         '@util': resolve('./src/util'),
       },
     },
@@ -59,7 +59,7 @@ export default defineConfig((configEnv) => {
       },
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@/assets/style/variable.scss";',
+          additionalData: '@import "@/style/variable.scss";',
         },
       },
     },

@@ -4,9 +4,9 @@
       <img src="/vite.svg" class="logo" alt="Vite logo">
     </a>
     <a href="https://vuejs.org/" target="_blank">
-      <img src="~@image/vue.svg" class="logo vue" alt="Vue logo">
+      <img src="~@assets/image/vue.svg" class="logo vue" alt="Vue logo">
     </a>
-    <HelloWorld msg="Vite + Vue" />
+    <HelloWorld msg="HelloWorld" />
   </main>
 </template>
 
