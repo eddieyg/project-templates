@@ -4,6 +4,7 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import removeConsole from 'vite-plugin-remove-console'
+import type { MkcertPluginOptions } from 'vite-plugin-mkcert'
 import mkcert from 'vite-plugin-mkcert'
 import eslint from 'vite-plugin-eslint'
 import autoprefixer from 'autoprefixer'
@@ -15,7 +16,7 @@ export default defineConfig((configEnv) => {
   const env = loadEnv(mode, process.cwd())
   const isProd = command === 'build'
 
-  const mkcertOptions: any = {}
+  const mkcertOptions: MkcertPluginOptions = {}
   if (env.VITE_MKCERT_PATH)
     mkcertOptions.mkcertPath = env.VITE_MKCERT_PATH
   else
