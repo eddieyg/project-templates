@@ -8,3 +8,9 @@ export function routerUpdateTitle(router: Router) {
     next()
   })
 }
+
+const middleware = [
+  routerUpdateTitle,
+]
+
+export default middleware
