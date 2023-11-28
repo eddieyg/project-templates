@@ -7,10 +7,9 @@ import removeConsole from 'vite-plugin-remove-console'
 import type { MkcertPluginOptions } from 'vite-plugin-mkcert'
 import mkcert from 'vite-plugin-mkcert'
 import eslint from 'vite-plugin-eslint'
-import autoprefixer from 'autoprefixer'
-import ProxyAgent from 'proxy-agent'
+// import autoprefixer from 'autoprefixer'
 
-// https://vitejs.cn/vite3-cn/config/
+// https://cn.vitejs.dev/guide/
 export default defineConfig((configEnv) => {
   const { mode, command } = configEnv
   const env = loadEnv(mode, process.cwd())
@@ -55,7 +54,7 @@ export default defineConfig((configEnv) => {
     ],
     css: {
       postcss: {
-        plugins: isProd ? [autoprefixer] : [],
+        // plugins: isProd ? [autoprefixer] : [],
       },
       preprocessorOptions: {
         scss: {
@@ -66,12 +65,12 @@ export default defineConfig((configEnv) => {
     server: {
       port: 9999,
       proxy: {
-        '^/eddapi/.*': {
-          target: 'http://api.edd.com',
-          rewrite: path => path.replace(/^\/eddapi/, ''),
+        '^/serve-api/.*': {
+          target: env.VITE_SERVE_API_HOST,
+          rewrite: path => path.replace(/^\/serve-api/, ''),
           changeOrigin: true,
           secure: false,
-          agent: new ProxyAgent(env.VITE_PROXY_AGENT),
+          // agent: new ProxyAgent(env.VITE_PROXY_AGENT),
         },
       },
     },

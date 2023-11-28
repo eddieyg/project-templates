@@ -11,7 +11,14 @@
 </template>
 
 <script setup lang="ts">
-import HelloWorld from './HelloWorld.vue'
+import HelloWorld from '@comps/Index/HelloWorld.vue'
+import { queryTestList } from '@/api'
+
+async function queryTest() {
+  const res = await queryTestList()
+  console.log(res)
+}
+queryTest()
 </script>
 
 <style lang="scss" scoped>

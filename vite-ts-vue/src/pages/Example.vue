@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import PininaUser from './PininaUser.vue'
+import PininaUser from '@comps/Example/PininaUser.vue'
 console.log('in Example page')
 </script>
 

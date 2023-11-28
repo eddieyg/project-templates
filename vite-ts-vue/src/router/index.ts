@@ -7,6 +7,9 @@ const router = createRouter({
   routes,
 })
 
-routerUpdateTitle(router, import.meta.env.VITE_APP_TITLE)
+const middleware = [
+  routerUpdateTitle,
+]
+middleware.forEach(m => m(router))
 
 export default router
